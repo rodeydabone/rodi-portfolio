@@ -7,7 +7,7 @@ const float = ref(null)
 
 const facts = [
   { value: 'Seit 2021', label: 'Berufserfahrung' },
-  { value: 'Azure · Terraform · Docker', label: 'Cloud-DevOps Stack' },
+  { value: 'Azure · Terraform · Docker', label: 'Stack' },
   { value: '2× Microsoft', label: 'Zertifizierungen' }
 ]
 
@@ -226,6 +226,7 @@ onUnmounted(() => {
   position: relative;
   justify-self: end;
   width: min(100%, 22rem, 39svh);
+  margin-bottom: 2rem;
   will-change: transform;
   transition: transform 0.9s var(--ease);
 }
@@ -252,11 +253,10 @@ onUnmounted(() => {
 
 .plan {
   position: absolute;
-  left: -3.25rem;
-  bottom: -1rem;
+  right: -1rem;
+  bottom: -2.75rem;
   z-index: 3;
   width: max-content;
-  max-width: calc(100% + 2.25rem);
   padding: 0.85rem 1rem 1rem;
   background: rgba(19, 21, 24, 0.82);
   -webkit-backdrop-filter: blur(12px);
@@ -370,6 +370,23 @@ onUnmounted(() => {
   font-size: clamp(1rem, 1.5vw, 1.3rem);
   font-weight: 500;
   letter-spacing: -0.02em;
+}
+
+@media (min-width: 62.01rem) {
+  .hero__facts > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .hero__facts dd {
+    margin: 0;
+  }
+  .hero__facts dt,
+  .hero__facts dd {
+    white-space: nowrap;
+  }
 }
 
 /* ----- Entrance (runs once) ----- */
