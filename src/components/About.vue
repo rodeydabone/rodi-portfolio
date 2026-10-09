@@ -4,7 +4,7 @@ import SectionHead from './SectionHead.vue'
 const stats = [
   { value: '4', plus: true, label: 'Jahre Erfahrung' },
   { value: '10', plus: true, label: 'Projekte abgeschlossen' },
-  { value: '2', plus: false, label: 'Microsoft Zertifikate' }
+  { value: '3', plus: false, label: 'Microsoft Zertifikate' }
 ]
 </script>
 

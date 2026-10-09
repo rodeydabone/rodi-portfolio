@@ -3,6 +3,13 @@ import SectionHead from './SectionHead.vue'
 
 const experience = [
   {
+    id: 0,
+    title: 'Mobile App Entwickler',
+    company: 'Vorwerk',
+    date: 'Mai 2026 - Heute',
+    details: []
+  },
+  {
     id: 1,
     title: '.NET-, Azure-, O365 Entwickler',
     company: 'RealCore Group GmbH (Essen) - ALDI NORD',
@@ -62,7 +69,7 @@ const experience = [
           <p class="tl__date">{{ item.date }}</p>
           <h3>{{ item.title }}</h3>
           <p class="tl__company">{{ item.company }}</p>
-          <ul>
+          <ul v-if="item.details.length">
             <li v-for="detail in item.details" :key="detail">{{ detail }}</li>
           </ul>
         </li>

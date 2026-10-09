@@ -8,7 +8,7 @@ const float = ref(null)
 const facts = [
   { value: 'Seit 2021', label: 'Berufserfahrung' },
   { value: 'Azure · Terraform · Docker', label: 'Stack' },
-  { value: '2× Microsoft', label: 'Zertifizierungen' }
+  { value: '3× Microsoft', label: 'Zertifizierungen' }
 ]
 
 // Pointer-reactive glow + depth. Only runs on fine-pointer devices, only while the
