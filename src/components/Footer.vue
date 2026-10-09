@@ -29,7 +29,13 @@ const socials = [
       <p class="footer__mark" aria-hidden="true">Rodi <span class="serif">Marten</span></p>
 
       <div class="footer__row">
-        <p>&copy; {{ year }} Rodi Marten. Alle Rechte vorbehalten.</p>
+        <div class="footer__legal">
+          <p>&copy; {{ year }} Rodi Marten. Alle Rechte vorbehalten.</p>
+          <nav aria-label="Rechtliches">
+            <a href="#/impressum">Impressum</a>
+            <a href="#/datenschutz">Datenschutz</a>
+          </nav>
+        </div>
 
         <ul class="footer__social">
           <li v-for="social in socials" :key="social.label">
@@ -86,6 +92,25 @@ const socials = [
   border-top: 1px solid var(--line);
   font-size: 0.9375rem;
   color: var(--muted);
+}
+.footer__legal {
+  display: grid;
+  gap: 0.35rem;
+}
+.footer__legal nav {
+  display: flex;
+  gap: 1.25rem;
+}
+.footer__legal a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-color: rgba(236, 235, 228, 0.35);
+  transition: color 0.25s, text-decoration-color 0.25s;
+}
+.footer__legal a:hover {
+  color: var(--lime);
+  text-decoration-color: currentColor;
 }
 .footer__social {
   display: flex;

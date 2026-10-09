@@ -7,13 +7,16 @@ const experience = [
     title: 'Mobile App Entwickler',
     company: 'Vorwerk',
     date: 'Mai 2026 - Heute',
-    details: []
+    details: [
+      'iOS- und Android-Entwicklung mit React Native',
+      'Separates Projekt: mobile Entwicklung mit .NET MAUI und Xamarin sowie Sentry und Middleware'
+    ]
   },
   {
     id: 1,
     title: '.NET-, Azure-, O365 Entwickler',
     company: 'RealCore Group GmbH (Essen) - ALDI NORD',
-    date: '2023 - Heute',
+    date: '2023 - Mai 2026',
     details: [
       'Azure Cloud Administrator / DevOps Entwickler',
       'Optimierung und Automatisierung der Infrastruktur für Effizienz und Skalierbarkeit',

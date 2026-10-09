@@ -60,7 +60,7 @@ rodi-portfolio/
 │   ├── components/          # Vue Komponenten (Styles scoped je Komponente)
 │   │   ├── Navigation.vue, Hero.vue, About.vue, Projects.vue
 │   │   ├── Resume.vue, Skills.vue, Certificates.vue
-│   │   └── Contact.vue, Footer.vue, SectionHead.vue
+│   │   └── Contact.vue, Footer.vue, SectionHead.vue, LegalPage.vue (Impressum, Datenschutz)
 │   ├── directives/reveal.js # v-reveal (Scroll-Einblendung)
 │   ├── App.vue             # Haupt-App-Komponente
 │   ├── main.js             # App Entry Point
@@ -83,6 +83,7 @@ Die Inhalte der Website können in den Vue-Komponenten unter `src/components/` a
 - **Skills**: `Skills.vue` - Technische Kompetenzen
 - **Zertifikate**: `Certificates.vue` - Microsoft Zertifikate
 - **Projekte**: `Projects.vue` - Portfolio-Projekte
+- **Impressum & Datenschutz**: `LegalPage.vue` (Routen `#/impressum`, `#/datenschutz`)
 - **Kontakt**: `Contact.vue` - Kontaktinformationen (das Formular öffnet das E-Mail-Programm per `mailto:`)
 
 ### Bilder austauschen

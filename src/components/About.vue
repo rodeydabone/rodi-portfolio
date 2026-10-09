@@ -37,8 +37,8 @@ const stats = [
         <div class="about__text">
           <p v-reveal class="about__lead">
             Ich bin ein ausgebildeter angewandter Informatiker mit Berufserfahrung seit 2021.
-            Meine Kenntnisse umfassen die Softwareentwicklung bis hin zur Cloud-Entwicklung,
-            mit Fokus auf Cloud-DevOps in aktuellen Projekten.
+            Meine Kenntnisse umfassen die Softwareentwicklung bis hin zur Cloud-Entwicklung
+            und mobilen App-Entwicklung, mit Schwerpunkt auf Cloud-DevOps.
           </p>
           <p v-reveal="80">
             Mein langfristiges Ziel ist es, mich zum
@@ -48,7 +48,7 @@ const stats = [
             Best Practices anzuwenden.
           </p>
           <p v-reveal="140">
-            Mit Erfahrung in Azure Cloud Administration, DevOps-Entwicklung und modernen
+            Mit Erfahrung in Azure Cloud Administration, DevOps-Entwicklung, mobilen Apps und modernen
             Webtechnologien bringe ich technisches Know-how und Leidenschaft für qualitativ
             hochwertige Software-Lösungen mit.
           </p>

@@ -10,12 +10,17 @@ const skillCategories = [
   {
     id: 2,
     title: 'Backend Development',
-    skills: ['C# / .NET', 'ASP.NET Core', 'Web API', 'Entity Framework', 'Microservices']
+    skills: ['C# / .NET', 'ASP.NET Core', 'Web API', 'Entity Framework', 'Microservices', 'Middleware']
   },
   {
     id: 3,
     title: 'Frontend Development',
     skills: ['TypeScript', 'Vue.js', 'Nuxt.js', 'React', 'HTML5', 'CSS3', 'Responsive Design']
+  },
+  {
+    id: 7,
+    title: 'Mobile Development',
+    skills: ['React Native', '.NET MAUI', 'Xamarin', 'iOS', 'Android']
   },
   {
     id: 4,
@@ -25,7 +30,7 @@ const skillCategories = [
   {
     id: 5,
     title: 'Tools & Methoden',
-    skills: ['Git', 'Scrum', 'Agile', 'Project Management', 'HCL Terraform', 'SharePoint']
+    skills: ['Git', 'Scrum', 'Agile', 'Project Management', 'HCL Terraform', 'SharePoint', 'Sentry']
   },
   {
     id: 6,

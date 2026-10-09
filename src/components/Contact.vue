@@ -90,6 +90,10 @@ function handleSubmit() {
             Nachricht senden
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" /></svg>
           </button>
+          <p class="form__hint">
+            Beim Absenden öffnet sich Ihr E-Mail-Programm, auf dieser Website werden keine Eingaben gespeichert.
+            Mehr dazu in der <a href="#/datenschutz">Datenschutzerklärung</a>.
+          </p>
           <p class="form__status" role="status">{{ status }}</p>
         </form>
       </div>
@@ -247,6 +251,18 @@ function handleSubmit() {
   justify-self: start;
   border: 0;
   padding: 1.1rem 1.9rem;
+}
+.form__hint {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.form__hint a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.form__hint a:hover {
+  color: var(--lime);
 }
 .form__status {
   min-height: 1.5em;
