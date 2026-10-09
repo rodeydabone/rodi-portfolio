@@ -540,12 +540,12 @@ onUnmounted(() => {
   .hero__float {
     justify-self: start;
     width: min(76%, 22rem);
-    margin-top: -0.5rem;
+    margin: -0.5rem 0 2.75rem;
   }
   .plan {
     left: auto;
     right: -1rem;
-    bottom: -1.5rem;
+    bottom: -2.75rem;
     transform-origin: 100% 100%;
   }
   .hero__lead {
@@ -590,16 +590,17 @@ onUnmounted(() => {
 @media (max-width: 40rem) {
   .hero__float {
     width: 100%;
+    margin-bottom: 0;
   }
   .hero__portrait {
-    width: 78%;
+    width: 88%;
   }
   .plan {
     position: relative;
     inset: auto;
     width: calc(100% - 1.25rem);
     max-width: none;
-    margin: -3.25rem 0 0 auto;
+    margin: -0.75rem 0 0 auto;
     font-size: 0.6875rem;
   }
 }
