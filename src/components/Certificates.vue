@@ -38,6 +38,16 @@ const exams = [
     id: 2,
     title: 'Designing Microsoft Azure Infrastructure Solutions',
     date: '11. Juli 2025'
+  },
+  {
+    id: 3,
+    title: 'Designing and Implementing Microsoft DevOps Solutions',
+    date: '5. Mai 2024'
+  },
+  {
+    id: 4,
+    title: 'Developing Solutions for Microsoft Azure',
+    date: '14. Januar 2024'
   }
 ]
 </script>
