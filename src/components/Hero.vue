@@ -126,6 +126,7 @@ onUnmounted(() => {
         <span class="line"><span class="word hero__marten serif">Marten</span></span>
       </h1>
 
+      <div class="hero__side">
       <div ref="float" class="hero__float">
         <figure class="hero__portrait">
           <img
@@ -145,6 +146,14 @@ onUnmounted(() => {
           <p style="--n: 2"><b class="add">+</b> pipelines <span>azure_devops</span></p>
           <p class="plan__sum" style="--n: 3">Plan: 2 hinzufügen, 1 ändern.</p>
         </div>
+      </div>
+
+      <dl class="hero__facts">
+        <div v-for="fact in facts" :key="fact.label">
+          <dt>{{ fact.label }}</dt>
+          <dd>{{ fact.value }}</dd>
+        </div>
+      </dl>
       </div>
 
       <div class="hero__lead">
@@ -168,13 +177,6 @@ onUnmounted(() => {
           <a class="btn btn--ghost" href="#contact">Kontakt aufnehmen</a>
         </div>
       </div>
-
-      <dl class="hero__facts">
-        <div v-for="fact in facts" :key="fact.label">
-          <dt>{{ fact.label }}</dt>
-          <dd>{{ fact.value }}</dd>
-        </div>
-      </dl>
     </div>
   </section>
 </template>
@@ -277,19 +279,28 @@ onUnmounted(() => {
 }
 
 /* ----- Portrait + plan ----- */
-.hero__float {
+.hero__side {
   grid-column: 8 / 13;
-  grid-row: 1 / 3;
-  align-self: start;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.hero__float {
   position: relative;
-  justify-self: end;
-  width: min(100%, 22rem, 39svh);
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: min(100%, 22rem, max(15rem, 36svh));
   will-change: transform;
   transition: transform 0.9s var(--ease);
 }
 .hero__portrait {
   position: relative;
+  width: 100%;
+  flex: none;
   aspect-ratio: 4 / 5.15;
   border-radius: 999px 999px 1.5rem 1.5rem;
   overflow: hidden;
@@ -310,11 +321,10 @@ onUnmounted(() => {
 }
 
 .plan {
-  position: absolute;
-  right: -1rem;
-  bottom: -2.75rem;
+  position: relative;
   z-index: 3;
   width: max-content;
+  margin: -1rem -1rem 0 0;
   padding: 0.85rem 1rem 1rem;
   background: rgba(19, 21, 24, 0.82);
   -webkit-backdrop-filter: blur(12px);
@@ -427,9 +437,7 @@ onUnmounted(() => {
 
 /* ----- Facts ----- */
 .hero__facts {
-  grid-column: 9 / -1;
-  grid-row: 3 / 4;
-  align-self: end;
+  align-self: stretch;
   display: grid;
   gap: 0;
   margin: 0;
@@ -598,6 +606,9 @@ onUnmounted(() => {
 
 /* ----- Tablet / mobile ----- */
 @media (max-width: 62rem) {
+  .hero__side {
+    display: contents;
+  }
   .hero {
     align-items: start;
   }
@@ -621,13 +632,7 @@ onUnmounted(() => {
   .hero__float {
     justify-self: start;
     width: min(76%, 22rem);
-    margin: -0.5rem 0 2.75rem;
-  }
-  .plan {
-    left: auto;
-    right: -1rem;
-    bottom: -2.75rem;
-    transform-origin: 100% 100%;
+    margin: -0.5rem 0 0;
   }
   .hero__lead {
     margin-top: 1.5rem;
