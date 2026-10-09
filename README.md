@@ -53,9 +53,9 @@ Eine moderne, responsive Portfolio-Website, entwickelt mit Vue.js 3 und Vite.
 ```
 rodi-portfolio/
 ├── public/                  # Statische Dateien (Bilder, fonts/)
-│   ├── portfolioimg001.jpeg
-│   ├── portfolioimg002.jpeg
-│   └── portfolioimg003.jpeg
+│   ├── portfolioimg001.webp
+│   ├── portfolioimg002.webp
+│   └── portfolioimg003.webp
 ├── src/
 │   ├── components/          # Vue Komponenten (Styles scoped je Komponente)
 │   │   ├── Navigation.vue, Hero.vue, About.vue, Projects.vue

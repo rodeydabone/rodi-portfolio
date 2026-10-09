@@ -77,7 +77,7 @@ onUnmounted(() => {
       <div ref="float" class="hero__float">
         <figure class="hero__portrait">
           <img
-            src="/portfolioimg001.jpeg"
+            src="/portfolioimg001.webp"
             alt="Portrait von Rodi Marten"
             width="749"
             height="688"

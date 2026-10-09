@@ -59,7 +59,7 @@ onUnmounted(cleanup)
 <template>
   <header class="nav" :class="{ 'is-compact': compact, 'is-open': open }">
     <div class="nav__bar">
-      <a href="#home" class="nav__logo" aria-label="Rodi Marten – Zum Seitenanfang" @click="open = false">
+      <a href="#home" class="nav__logo" aria-label="RM – Rodi Marten, zum Seitenanfang" @click="open = false">
         RM<i aria-hidden="true"></i>
       </a>
 

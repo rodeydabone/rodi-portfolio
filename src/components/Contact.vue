@@ -33,7 +33,7 @@ function handleSubmit() {
         <div class="contact__info">
           <figure v-reveal class="contact__portrait">
             <img
-              src="/portfolioimg003.jpeg"
+              src="/portfolioimg003.webp"
               alt="Rodi Marten bei Sonnenuntergang am Strand"
               width="745"
               height="690"
@@ -186,6 +186,8 @@ function handleSubmit() {
   font-style: normal;
 }
 .contact__list a {
+  display: inline-block;
+  padding-block: 0.3rem;
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
   transition: background-size 0.5s var(--ease), color 0.25s;
 }

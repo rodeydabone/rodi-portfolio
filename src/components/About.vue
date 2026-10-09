@@ -23,7 +23,7 @@ const stats = [
         <figure v-reveal class="about__figure">
           <div class="about__frame">
             <img
-              src="/portfolioimg002.jpeg"
+              src="/portfolioimg002.webp"
               alt="Rodi Marten am Meer"
               width="747"
               height="685"
