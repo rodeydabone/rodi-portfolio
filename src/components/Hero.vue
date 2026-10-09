@@ -1,6 +1,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const skills = [
+  'Landing Pages',
+  'Web-Apps',
+  'Mobile Apps für iOS & Android',
+  'Cloud-Infrastrukturen',
+  'Websites, Apps & Infrastruktur'
+]
+const word = ref(skills[0])
+
 const root = ref(null)
 const glow = ref(null)
 const float = ref(null)
@@ -47,7 +56,48 @@ function setListening(on) {
   }
 }
 
+// Cycles through `skills` exactly once, then rests on the summary. Pauses while the
+// hero is off screen or the tab is hidden; one timeout at a time, no intervals.
+let wordTimer = 0
+let wordIndex = 0
+let wordPending = false
+let heroVisible = true
+
+function stepWord() {
+  wordTimer = 0
+  if (!heroVisible || document.hidden) {
+    wordPending = true
+    return
+  }
+  wordIndex += 1
+  word.value = skills[wordIndex]
+  if (wordIndex < skills.length - 1) wordTimer = window.setTimeout(stepWord, 1900)
+}
+
+function resumeWord() {
+  if (wordPending && heroVisible && !document.hidden) {
+    wordPending = false
+    wordTimer = window.setTimeout(stepWord, 600)
+  }
+}
+
+function onVisibility() {
+  resumeWord()
+}
+
 onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    word.value = skills[skills.length - 1]
+  } else {
+    wordTimer = window.setTimeout(stepWord, 3000)
+    document.addEventListener('visibilitychange', onVisibility)
+    new IntersectionObserver(([entry], obs) => {
+      heroVisible = entry.isIntersecting
+      resumeWord()
+      if (wordIndex >= skills.length - 1) obs.disconnect()
+    }).observe(root.value)
+  }
+
   const canTrack = window.matchMedia(
     '(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)'
   ).matches
@@ -57,6 +107,8 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  clearTimeout(wordTimer)
+  document.removeEventListener('visibilitychange', onVisibility)
   visibilityObserver?.disconnect()
   setListening(false)
 })
@@ -97,10 +149,16 @@ onUnmounted(() => {
 
       <div class="hero__lead">
         <p class="hero__role">
-          Software-/Cloud Developer mit Fokus auf <span class="serif">Cloud-DevOps</span> und moderne Webtechnologien.
+          <span class="sr-only">Software-/Cloud Developer. Ich baue Landing Pages, Web-Apps, mobile Apps für iOS und Android und Cloud-Infrastrukturen.</span>
+          <span class="hero__role-line" aria-hidden="true">Software-/Cloud Developer. Ich baue</span>
+          <span class="rot" aria-hidden="true">
+            <Transition name="word" mode="out-in">
+              <span :key="word" class="rot__word serif">{{ word }}</span>
+            </Transition>
+          </span>
         </p>
         <p class="hero__text">
-          Ich entwickle skalierbare Lösungen und optimiere IT-Infrastrukturen für effiziente und innovative Anwendungen.
+          Schwerpunkt Cloud-DevOps – dazu entwickle ich Landing Pages, Web-Apps, mobile Apps für iOS und Android sowie skalierbare IT-Infrastrukturen für effiziente und innovative Anwendungen.
         </p>
         <div class="hero__cta">
           <a class="btn" href="#projects">
@@ -328,12 +386,35 @@ onUnmounted(() => {
   letter-spacing: -0.03em;
   text-wrap: balance;
 }
-.hero__role .serif {
-  font-size: 1.12em;
+.hero__role-line,
+.rot {
+  display: block;
+}
+.rot {
+  overflow: hidden;
+  padding: 0.05em 0.1em 0.12em 0;
+  margin-bottom: -0.12em;
+}
+.rot__word {
+  display: block;
+  font-size: 1.2em;
+  line-height: 1.1;
   color: var(--lime);
 }
+.word-enter-active,
+.word-leave-active {
+  transition: transform 0.55s var(--ease), opacity 0.4s;
+}
+.word-enter-from {
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+}
+.word-leave-to {
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+}
 .hero__text {
-  max-width: 30rem;
+  max-width: 34rem;
   color: var(--muted);
   font-size: 1.0625rem;
 }
