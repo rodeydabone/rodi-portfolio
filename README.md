@@ -101,6 +101,8 @@ Farben, Schriften und Abstände sind als CSS-Variablen am Anfang von `src/style.
 
 ## 🌐 Deployment
 
+**Live:** https://rodimarten.de (GitHub Pages mit Custom Domain, Deployment über `.github/workflows/deploy.yml` bei jedem Push auf `main`).
+
 ### Netlify
 
 1. Repository auf GitHub pushen
