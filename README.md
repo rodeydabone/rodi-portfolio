@@ -2,14 +2,14 @@
 
 Eine moderne, responsive Portfolio-Website, entwickelt mit Vue.js 3 und Vite.
 
-## 🚀 Features
+## Features
 
-- **Moderne Vue.js 3 Architektur** mit Composition API
-- **Vollständig responsive** für alle Geräte
-- **Smooth Scrolling** Navigation
-- **Professionelles Design** mit Gradient-Effekten
-- **Optimierte Performance** mit Vite
-- **SEO-freundlich** strukturiert
+- **Vue 3 + Vite**, keine weiteren Laufzeit-Abhängigkeiten
+- **Art-directed Design**: Hero mit Terraform-"Plan"-Motiv, überlappende Sektionen ("Sheets"), Typografie aus Geist, Geist Mono und Instrument Serif (selbst gehostet, DSGVO-freundlich)
+- **Scroll-Effekte** über CSS Scroll-driven Animations (progressive Enhancement) und einen gemeinsamen IntersectionObserver (`v-reveal`)
+- **Performance**: keine Animationsbibliothek, keine Endlosanimationen, nur transform/opacity, Pointer-Effekt nur bei sichtbarem Hero und feinem Zeigergerät
+- **Barrierefrei**: semantisches HTML, Skip-Link, sichtbare Fokus-Zustände, Tastatur-bedienbares Menü, `prefers-reduced-motion` wird respektiert
+- **Responsive** für Desktop, Tablet und Mobil
 
 ## 📋 Voraussetzungen
 
@@ -52,24 +52,19 @@ Eine moderne, responsive Portfolio-Website, entwickelt mit Vue.js 3 und Vite.
 
 ```
 rodi-portfolio/
-├── public/                  # Statische Dateien (Bilder)
+├── public/                  # Statische Dateien (Bilder, fonts/)
 │   ├── portfolioimg001.jpeg
 │   ├── portfolioimg002.jpeg
 │   └── portfolioimg003.jpeg
 ├── src/
-│   ├── components/          # Vue Komponenten
-│   │   ├── Navigation.vue
-│   │   ├── Hero.vue
-│   │   ├── About.vue
-│   │   ├── Resume.vue
-│   │   ├── Skills.vue
-│   │   ├── Certificates.vue
-│   │   ├── Projects.vue
-│   │   ├── Contact.vue
-│   │   └── Footer.vue
+│   ├── components/          # Vue Komponenten (Styles scoped je Komponente)
+│   │   ├── Navigation.vue, Hero.vue, About.vue, Projects.vue
+│   │   ├── Resume.vue, Skills.vue, Certificates.vue
+│   │   └── Contact.vue, Footer.vue, SectionHead.vue
+│   ├── directives/reveal.js # v-reveal (Scroll-Einblendung)
 │   ├── App.vue             # Haupt-App-Komponente
 │   ├── main.js             # App Entry Point
-│   └── style.css           # Globale Styles
+│   └── style.css           # Design-Tokens, Basis- und Layout-Styles
 ├── index.html              # HTML Template
 ├── package.json            # Projekt-Dependencies
 ├── vite.config.js          # Vite Konfiguration
@@ -88,7 +83,7 @@ Die Inhalte der Website können in den Vue-Komponenten unter `src/components/` a
 - **Skills**: `Skills.vue` - Technische Kompetenzen
 - **Zertifikate**: `Certificates.vue` - Microsoft Zertifikate
 - **Projekte**: `Projects.vue` - Portfolio-Projekte
-- **Kontakt**: `Contact.vue` - Kontaktinformationen
+- **Kontakt**: `Contact.vue` - Kontaktinformationen (das Formular öffnet das E-Mail-Programm per `mailto:`)
 
 ### Bilder austauschen
 
@@ -100,16 +95,8 @@ Neue Bilder können im `public/` Ordner abgelegt und in den Komponenten referenz
 
 ### Design anpassen
 
-Die Farben und Styles können in der `src/style.css` Datei angepasst werden. 
-Die CSS-Variablen befinden sich am Anfang der Datei:
-
-```css
-:root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  /* ... weitere Variablen */
-}
-```
+Farben, Schriften und Abstände sind als CSS-Variablen am Anfang von `src/style.css` definiert
+(`--ink`, `--paper`, `--lime`, `--font-sans` ...). Sektionen wählen eine Fläche über `theme-ink` oder `theme-paper`.
 
 ## 🌐 Deployment
 

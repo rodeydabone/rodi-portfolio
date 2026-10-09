@@ -22,3 +22,57 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code / AI-Assistenten (lokale Anweisungen, Einstellungen, Memory)
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.mcp.json
+.cursor/
+.cursorrules
+.windsurfrules
+.aider*
+.github/copilot-instructions.md
+AGENTS.md
+GEMINI.md
+
+# Secrets & Zugangsdaten
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+id_ed25519*
+secrets.*
+credentials.*
+.npmrc
+.netrc
+
+# Cloud / Infrastruktur (Terraform, Azure, Netlify, Vercel)
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+.azure/
+.netlify/
+.vercel/
+
+# Persönliche Dokumente & Rohmaterial (nicht öffentlich)
+*.pdf
+*.docx
+*.xlsx
+/private/
+/_private/
+/drafts/
+
+# Build-, Test- und Tool-Artefakte
+coverage/
+.cache/
+.vite/
+*.tsbuildinfo
+Thumbs.db
+Desktop.ini
